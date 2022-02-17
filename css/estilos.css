@@ -130,3 +130,12 @@ background: radial-gradient(circle, rgba(151,120,91,0.6646008745294993) 26%, rgb
 .footer {
   grid-area: footer;
 }
+
+@media (min-width:320px) {
+
+  .main img {
+    margin-top: 15rem;
+    width: 100%;
+    height: auto;
+  }
+}

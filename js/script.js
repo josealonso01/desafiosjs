@@ -18,6 +18,9 @@ while (palabra != 'luna'){
         break;
     }
 }
+
+
+
 if (acerto) {
     alert ('Ganaste!!')
 }
