@@ -1,0 +1,302 @@
+@import "maps";
+@import "extend";
+@import "mixin";
+
+/*BOX MODELING*/
+
+* {
+  padding        : 0%;
+  margin         : 0%;
+  box-sizing     : border-box;
+  text-decoration: none;
+}
+
+/*-------ESTILOS GENERALES------*/
+
+.bg-beige {
+  --bs-bg-opacity: 1 background-color: rgb(191, 179, 164);
+}
+
+
+.header {
+  padding        : 1.5rem;
+  display        : flex;
+  justify-content: left;
+  font-size      : 1.5rem;
+
+  img {
+    width : 5rem;
+    height: auto;
+  }
+
+  ul {
+    list-style-type: none;
+    margin         : 0;
+    padding        : 0;
+    overflow       : hidden;
+  }
+
+  li {
+    float: left;
+
+    a {
+      display        : block;
+      text-align     : center;
+      padding        : 1rem;
+      text-decoration: none;
+      color          : rgb(17, 14, 10);
+    }
+
+    :hover {
+      background: rgb(151, 120, 91);
+      background: radial-gradient(circle, rgba(151, 120, 91, 1) 0%, rgba(105, 86, 69, 1) 100%);
+    }
+  }
+  svg{
+    width: 1.5rem;
+    height: auto;
+  }
+}
+
+.carrito {
+  margin-left: 107rem;
+}
+
+.main {
+  div {
+    font-size: 1.5rem;
+  }
+
+  p {
+    padding: 3rem;
+  }
+
+  img {
+    width        : auto;
+    height       : 37rem;
+    display      : block;
+    margin       : auto;
+    margin-top   : 3rem;
+    margin-bottom: 3rem;
+    padding      : auto;
+
+    p {
+      padding  : 3rem;
+      font-size: 1rem;
+    }
+  }
+
+  form {
+    text-align: center;
+    padding   : 1.6rem;
+
+    img {
+      width : 3.5rem;
+      height: auto;
+    }
+
+    button {
+      font-size: 1.3rem;
+    }
+  }
+
+  input {
+    font-size: 1.3rem;
+  }
+
+  label {
+    a {
+      font-size    : 1.4rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+
+.footer {
+  height   : auto;
+  width    : 100%;
+  margin   : auto;
+  padding  : 2.5rem;
+  font-size: 1.5rem;
+
+  a {
+    text-decoration: none;
+    color          : rgb(17, 14, 10);
+  }
+
+  ul {
+    display        : flex;
+    justify-content: center;
+  }
+
+  svg {
+    height: 1.5rem;
+    width : auto;
+  }
+}
+
+/* --- GRID -- */
+
+.gridContainer {
+  display              : grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows   : 0.2fr 6fr 0.2fr;
+  grid-template-areas  :
+    "header header header"
+    "main main main"
+    "footer footer footer";
+  align-content: space-between;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.main__grid {
+  display              : grid;
+  grid-template-columns: 1fr 1fr 0fr;
+  grid-template-rows   : 1fr 1fr 1fr;
+  grid-template-areas  :
+    "main__grid--foto1 main__grid--foto2 ."
+    "main__grid--foto3 main__grid--foto4 ."
+    "main__grid--foto5 main__grid--foto6 .";
+  grid-area: main;
+}
+
+.main__grid--foto1 {
+  grid-area: main__grid--foto1;
+}
+
+.main__grid--foto2 {
+  grid-area: main__grid--foto2;
+}
+
+.main__grid--foto3 {
+  grid-area: main__grid--foto3;
+}
+
+.main__grid--foto4 {
+  grid-area: main__grid--foto4;
+}
+
+.main__grid--foto5 {
+  grid-area: main__grid--foto5;
+}
+
+.main__grid--foto6 {
+  grid-area: main__grid--foto6;
+}
+
+/* --- ANIMACIONES --- */
+
+.scale-up-bl {
+  animation: scale-up-bl .4s cubic-bezier(.39, .575, .565, 1.000) both
+}
+
+@keyframes scale-up-bl {
+  0% {
+    transform       : scale(.5);
+    transform-origin: 0 100%
+  }
+
+  100% {
+    transform       : scale(1);
+    transform-origin: 0 100%
+  }
+}
+
+
+
+/* --- RESPONSIVE --- */
+
+@media(max-width: 576px) {
+
+  body {
+    background-color: rgba(151, 120, 91, 0.808);
+  }
+
+  .barra.header {
+    font-size: 1rem;
+    padding  : 1rem;
+    height   : auto;
+
+    img {
+      width : 3.5rem;
+      height: auto;
+    }
+    width: 36rem;
+  }
+
+  .main {
+    img {
+      margin-top: 9.5rem;
+    }
+
+    p {
+      padding  : 100px;
+      font-size: 120%;
+    }
+
+    div {
+      img {
+        width : 70%;
+        height: auto;
+      }
+    }
+  }
+
+  .toast {
+    img {
+      width: 1rem;
+      height: auto;
+    }
+  }
+
+  .main__grid {
+    display        : block;
+    justify-content: center;
+  }
+
+  .footer {
+    height : auto;
+    padding: 1rem;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+
+  .header {
+    font-size: 1.5rem;
+    height   : auto;
+
+    img {
+      height: auto;
+      width : 4rem;
+    }
+  }
+
+  .main {
+    img {
+      width : 20rem;
+      height: auto;
+    }
+  }
+
+
+  .footer {
+    height : auto;
+    padding: 1rem;
+  }
+
+}

@@ -1,0 +1,11 @@
+
+
+/*MAPS*/
+$mapsColors: (cuerpo: #bfb3a4, barra:rgba(151, 120, 91, 0.808));
+
+@each $sector, $color in $mapsColors {
+    .#{$sector} {
+        background-color: $color;
+    }
+}
+

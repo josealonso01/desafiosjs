@@ -1,0 +1,10 @@
+/*EXTEND*/
+
+.letra {
+    font-family: "Josefin Slab", serif;
+}
+
+.letraColores {
+    @extend .letra ;
+    color: black;
+}
