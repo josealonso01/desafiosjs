@@ -130,7 +130,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 0fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "main__grid--foto1 main__grid--foto2 ." "main__grid--foto3 main__grid--foto4 ." "main__grid--foto5 main__grid--foto6 .";
+  grid-template-areas: "main__grid--foto1 main__grid--foto2" "main__grid--foto3 main__grid--foto4" "main__grid--foto5 main__grid--foto6";
   grid-area: main; }
 
 .main__grid--foto1 {
@@ -151,18 +151,6 @@
 .main__grid--foto6 {
   grid-area: main__grid--foto6; }
 
-/* --- ANIMACIONES --- */
-.scale-up-bl {
-  animation: scale-up-bl 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
-
-@keyframes scale-up-bl {
-  0% {
-    transform: scale(0.5);
-    transform-origin: 0 100%; }
-  100% {
-    transform: scale(1);
-    transform-origin: 0 100%; } }
-
 /* --- RESPONSIVE --- */
 @media (max-width: 576px) {
   body {
@@ -170,8 +158,7 @@
   .barra.header {
     font-size: 1rem;
     padding: 1rem;
-    height: auto;
-    width: 36rem; }
+    height: auto; }
     .barra.header img {
       width: 3.5rem;
       height: auto; }
@@ -188,7 +175,10 @@
     height: auto; }
   .main__grid {
     display: block;
-    justify-content: center; }
+    justify-content: center;
+    width: 100%; }
+  .carrito {
+    margin-left: 22rem; }
   .footer {
     height: auto;
     padding: 1rem; } }
