@@ -1,30 +1,16 @@
 
-let palabra = ''
-let contador = 0
-let acerto = false
+let price = prompt('ingrese el precio del producto')
 
-while (palabra != 'luna'){
-    palabra = prompt('de noche sale.. de dia se va')
-    contador++
-    if (palabra == 'luna') {
-        acerto = true 
-        break;
-    }
+result = calculateIVA(price, 0.21)
+alert("El resultado con IVA es " + result)
 
-    if (contador == 3) {
-        alert('PISTA:  si me quitan una letra una queda y nada más');
-    }
-    if (contador == 4) { 
-        break;
-    }
+
+function calculateIVA(price, taxRate = 0.21) {
+    let result = price * (1 + taxRate)
+    return result
 }
 
+const calculateDiscount = price => price * 0.9
 
-
-if (acerto) {
-    alert ('Ganaste!!')
-}
-else {
-    alert('la respuesta correcta era LUNA')
-}
-
+result = calculateDiscount(price)
+alert("El resultado con 10% de descuento es: " + result)
