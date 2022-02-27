@@ -18,53 +18,42 @@
 }
 
 
-.header {
-  padding        : 1.5rem;
-  display        : flex;
-  justify-content: left;
-  font-size      : 1.5rem;
-
+header {
+  text-decoration: none;
+  font-size: 1.5rem;
+  height: 7rem;
   img {
-    width : 5rem;
+    margin: 1rem;
+    width: 4rem;
     height: auto;
   }
+  div {
+    li {
+      float: left;
+      a {
 
-  ul {
-    list-style-type: none;
-    margin         : 0;
-    padding        : 0;
-    overflow       : hidden;
-  }
-
-  li {
-    float: left;
-
-    a {
-      display        : block;
-      text-align     : center;
-      padding        : 1rem;
-      text-decoration: none;
-      color          : rgb(17, 14, 10);
+        margin: 1.5rem;
+        display        : block;
+        text-align     : center;
+        padding        : 3rem;
+        text-decoration: none;
+        color          : rgb(17, 14, 10);
+      }
+  
+      :hover {
+        background: rgb(151, 120, 91);
+        background: radial-gradient(circle, rgba(151, 120, 91, 1) 0%, rgba(105, 86, 69, 1) 100%);
+      }
+      }
     }
-
-    :hover {
-      background: rgb(151, 120, 91);
-      background: radial-gradient(circle, rgba(151, 120, 91, 1) 0%, rgba(105, 86, 69, 1) 100%);
-    }
-  }
-  svg{
-    width: 1.5rem;
-    height: auto;
-  }
 }
 
-.carrito {
-  margin-left: 107rem;
-}
+
 
 .main {
   div {
     font-size: 1.5rem;
+    margin-top: 5rem;
   }
 
   p {
@@ -140,13 +129,12 @@
 
 .gridContainer {
   display              : grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 0fr 0fr;
   grid-template-rows   : 0.2fr 6fr 0.2fr;
   grid-template-areas  :
     "header header header"
     "main main main"
     "footer footer footer";
-  align-content: space-between;
 }
 
 .header {

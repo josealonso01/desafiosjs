@@ -6,34 +6,31 @@ function calculateIVA(price, taxRate = 0.21) {
 
 const calculateDiscount = price => price * 0.9
 
-let wantsToContinue = 'si'
-let priceArray = []
+let productArray = ['unicornio', 'jirafa', 'arcoiris', 'osito', 'unicornio', 'stitch']
+let priceArray = [1000, 1000, 1000, 1500, 3000, 1500]
 
-while (wantsToContinue == 'si'){
-    let price = prompt('Ingrese el precio del producto')
-    priceArray.push(price)
-    wantsToContinue = prompt('¿Desea continuar agregando productos?').toLowerCase()
-}
 
-let total = 0
-let totalWithDiscount = 0 
+let input = prompt('Ingrese el nombre del articulo que queres comprar: \n 1. unicornio \n 2. jirafa \n 3. arcoiris \n 4. osito \n 5. unicornio \n 6. stitch' )
+
+
+
+
 for (let i = 0; i < priceArray.length; i++) {
-    const price = priceArray[i];
-    ivaPrice = calculateIVA(price, 0.21)
-    discountPrice = calculateDiscount(ivaPrice)
     
-    total += ivaPrice
-    totalWithDiscount += discountPrice
-}
+    product = productArray[i]
+
+    if (product == input) {
+        productPrice = priceArray[i]
+    }
+ }
+
+alert('Este producto sale: ' + `${calculateIVA (productPrice, 0.21)}`)
+alert('El total con 10% de descuento es: ' + `${calculateDiscount(productPrice, 0.9)}`)
 
 
-alert('El total con IVA es: ' + total)
-alert('El total con 10% de descuento es: ' + totalWithDiscount)
-
-
-if (total >= 1000) 
+if (productPrice >= 2000) 
     alert('Este carrito tiene envio gratis')
-if (total < 1000) 
+if (productPrice < 2000) 
     alert('Este carrito tiene un costo de envio sujeto a CorreoArgentino')
 
-
+ 
