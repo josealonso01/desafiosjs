@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./css-bt/bootstrap.min.css">
-    <link rel="stylesheet" href="./sass/styles.css">
+    <link rel="stylesheet" href="../css-bt/bootstrap.min.css">
+    <link rel="stylesheet" href="../sass/styles.css">
     <link rel="shortcut icon" href="../fotos/logo.png" />
     <title>Tienda</title>
 </head>
@@ -21,50 +21,25 @@
 <body class="gridContainer cuerpo letraColores">
 
 
-    <header class="barra header">
-        <nav class="navbar navbar-expand-lg navbar-light ">
+    <header>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg ">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <img class="header__img scale-up-bl logo" src="./fotos/logo.png"
-                        alt="bebe durmiendo sobre un ovillo de lana que es el lomo de una oveja, al costado dice bebe a bordo, el nombre de la empresa" />
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./sobrenosotros.html">Sobre
-                                Nosotros</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./tienda.html">Tienda</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a>
-                        </li>
-                    </ul>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="../index.html"><img src="../fotos/logo.png" alt=""></a>
                 </div>
-                <div class="carrito d-flex flex-row">
-                    <ul>
-                        <li>
-                            <button class="btn btn-dark" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" fill="currentColor" class="bi bi-basket2-fill"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z" />
-                                </svg></button>
-                        </li>
-                    </ul>
-                </div>
+                <form class="d-grid d-md-flex justify-content-md-end">
+                    <button class="btn btn-outline-secondary" type="submit">Carrito  <svg
+                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-basket2-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z" />
+                        </svg></button>
+                </form>
             </div>
         </nav>
     </header>
@@ -80,41 +55,41 @@
         <div class="main__grid">
 
             <div class="main__grid--foto1">
-                <img class="main__img tienda img-thumbnail" src="./fotos/unicornio.png"
+                <img class="main__img tienda img-thumbnail" src="../fotos/unicornio.png"
                     alt="tapete colgante celeste con un unicornio en el medio hecho al crochet" />
                 <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
                 <label for="option1"><a class="btn btn-secondary" href="./error.html">Agregar al carrito</a></label>
             </div>
             <div class="main__grid--foto2">
-                <img class="main__img img-thumbnail" src="./fotos/jirafa.png"
+                <img class="main__img img-thumbnail" src="../fotos/jirafa.png"
                     alt="tapete colgante cuadrado blanco con una jirafa comiendo flores en el medio hecho al crochet" />
                 <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
                 <label for="option1"><a class="btn btn-secondary" href="./error.html">Agregar al carrito</a></label>
             </div>
 
             <div class="main__grid--foto3">
-                <img class="main__img img-thumbnail" src="./fotos/arcoiris.png"
+                <img class="main__img img-thumbnail" src="../fotos/arcoiris.png"
                     alt="tapete con forma de arcoiris de colores con una nube y un sol hecho al crochet" />
                 <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
                 <label for="option1"><a class="btn btn-secondary" href="./error.html">Agregar al carrito</a></label>
             </div>
 
             <div class="main__grid--foto4">
-                <img class="main__img img-thumbnail" src="./fotos/osobostero.png"
+                <img class="main__img img-thumbnail" src="../fotos/osobostero.png"
                     alt="muñeco con forma de oso con camiseta de boca y una pelota en el pie hecho al crochet" />
                 <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
                 <label for="option1"><a class="btn btn-secondary" href="./error.html">Agregar al carrito</a></label>
             </div>
 
             <div class="main__grid--foto5">
-                <img class="main__img tienda img-thumbnail" src="./fotos/banquito.jpg"
+                <img class="main__img tienda img-thumbnail" src="../fotos/banquito.jpg"
                     alt="banco decorativo con forma de unicornio hecho al crochet" />
                 <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
                 <label for="option1"><a class="btn btn-secondary" href="./error.html">Agregar al carrito</a></label>
             </div>
 
             <div class="main__grid--foto6">
-                <img class="main__img tienda img-thumbnail" src="./fotos/stitch.jpg"
+                <img class="main__img tienda img-thumbnail" src="../fotos/stitch.jpg"
                     alt="muñeco con forma de stitch hecho al crochet" />
                 <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
                 <label for="option1"><a class="btn btn-secondary" href="./error.html">Agregar al carrito</a></label>
@@ -151,7 +126,7 @@
     </footer>
 
     <script src="../js-bt/bootstrap.min.js"></script>
-    <script src="./js/script.js"></script>
+   <script src="../js/script.js"></script> 
 
 </body>
 

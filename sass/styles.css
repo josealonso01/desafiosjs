@@ -28,39 +28,30 @@
 .bg-beige {
   --bs-bg-opacity: 1 background-color: rgb(191, 179, 164); }
 
-.header {
-  padding: 1.5rem;
-  display: flex;
-  justify-content: left;
-  font-size: 1.5rem; }
-  .header img {
-    width: 5rem;
+header {
+  text-decoration: none;
+  font-size: 1.5rem;
+  height: 7rem; }
+  header img {
+    margin: 1rem;
+    width: 4rem;
     height: auto; }
-  .header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; }
-  .header li {
+  header div li {
     float: left; }
-    .header li a {
+    header div li a {
+      margin: 1.5rem;
       display: block;
       text-align: center;
-      padding: 1rem;
+      padding: 3rem;
       text-decoration: none;
       color: #110e0a; }
-    .header li :hover {
+    header div li :hover {
       background: #97785b;
       background: radial-gradient(circle, #97785b 0%, #695645 100%); }
-  .header svg {
-    width: 1.5rem;
-    height: auto; }
-
-.carrito {
-  margin-left: 107rem; }
 
 .main div {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  margin-top: 5rem; }
 
 .main p {
   padding: 3rem; }
@@ -112,10 +103,9 @@
 /* --- GRID -- */
 .gridContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 0fr 0fr;
   grid-template-rows: 0.2fr 6fr 0.2fr;
-  grid-template-areas: "header header header" "main main main" "footer footer footer";
-  align-content: space-between; }
+  grid-template-areas: "header header header" "main main main" "footer footer footer"; }
 
 .header {
   grid-area: header; }
