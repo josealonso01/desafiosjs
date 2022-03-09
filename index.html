@@ -30,7 +30,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="./index.html"><img src="./fotos/logo.png" alt=""></a>
+                    <a id="logo" class="navbar-brand" href="./index.html" onclick="clickLogo()"><img src="./fotos/logo.png" alt=""></a>
                 </div>
                 <form class="d-grid d-md-flex justify-content-md-end">
                     <button class="btn btn-outline-secondary" type="submit">Carrito <svg
@@ -46,11 +46,11 @@
 
     <main class="main text-center">
 
-        <div class="alert alert-dark" role="alert">
-            Tambien podes encargar piezas personalizadas <a href="https://api.whatsapp.com/send?phone=542494374429"
+        <div id="contenedor"  class="alert alert-dark" role="alert">
+           <p> Tambien podes encargar piezas personalizadas <a href="https://api.whatsapp.com/send?phone=542494374429"
                 class="alert-link" target="blank">haciendo click aqui</a>. Escribinos y te pasamos un presupuesto a
             medida
-        </div>
+        </div> </p>
 
         <div class="main__grid">
 
@@ -94,6 +94,7 @@
     </main>
 
     <footer class="barra footer">
+
 
         <ul>
             <li class="btn btn-link"><a href="https://www.instagram.com/bebeabordotandil/?hl=es-la" target="blank"><svg
