@@ -1,6 +1,10 @@
 function clickEvent() {
-    alert('Agregado al carrito')
-    /* Esta función se completara en proximas entregas */
+    let contenedor = document.getElementById('contenedor')
+    contenedor.innerHTML = '<h2>Producto añadido al carrito correctamente</h2> <p>tambien podes encargar piezas personalizadas, escribinos y te pasamos un presupuesto a medida</p>'
+}
+
+function clickLogo() {
+    alert('esta funcion todavia no se puede realizar')
 }
 
 function calculateIVA(price, taxRate = 0.21) {
@@ -87,3 +91,7 @@ if (basket.length > 0) {
     notifyShippingCosts(total)
 }
 
+
+let contenedor = document.querySelector("#contenedor"); {
+    contenedor.innerHTML = "<h2>GRACIAS POR VISITAR NUESTRA PAGINA WEB</h2>"
+}
