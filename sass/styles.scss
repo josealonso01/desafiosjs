@@ -20,39 +20,52 @@
 
 header {
   text-decoration: none;
-  font-size: 1.5rem;
-  height: 7rem;
+  font-size      : 1.5rem;
+  height         : 7rem;
+
   img {
     margin: 1rem;
-    width: 4rem;
+    width : 4rem;
     height: auto;
   }
+
   div {
+    button {
+      color: antiquewhite;
+
+      a {
+        text-decoration: none;
+        color          : antiquewhite;
+        font-size      : 1.5rem;
+      }
+    }
+
     li {
       float: left;
+
       a {
 
-        margin: 1.5rem;
+        margin         : 1.5rem;
         display        : block;
         text-align     : center;
         padding        : 3rem;
         text-decoration: none;
         color          : rgb(17, 14, 10);
       }
-  
+
       :hover {
         background: rgb(151, 120, 91);
         background: radial-gradient(circle, rgba(151, 120, 91, 1) 0%, rgba(105, 86, 69, 1) 100%);
       }
-      }
     }
+  }
 }
 
 
 
 .main {
   div {
-    font-size: 1.5rem;
+    font-size : 1.5rem;
     margin-top: 5rem;
   }
 
@@ -75,31 +88,17 @@ header {
     }
   }
 
-  form {
-    text-align: center;
-    padding   : 1.6rem;
-
-    img {
-      width : 3.5rem;
-      height: auto;
-    }
-
-    button {
-      font-size: 1.3rem;
-    }
+  img {
+    width : 35rem;
+    height: auto;
   }
 
-  input {
-    font-size: 1.3rem;
-  }
-
-  label {
-    a {
-      font-size    : 1.4rem;
-      margin-bottom: 2.5rem;
-    }
+  button {
+    font-size    : 1.3rem;
+    margin-bottom: 2.5rem;
   }
 }
+
 
 
 .footer {
@@ -222,17 +221,12 @@ header {
     }
   }
 
-  .toast {
-    img {
-      width: 1rem;
-      height: auto;
-    }
-  }
+
 
   .main__grid {
     display        : block;
     justify-content: center;
-    width: 100%;
+    width          : 100%;
   }
 
   .carrito {
@@ -245,6 +239,21 @@ header {
   }
 
 
+}
+
+.toast {
+  width: 30rem;
+}
+
+.toast-header {
+  img {
+    width : 3rem;
+    height: auto;
+  }
+}
+
+.toast-body {
+  padding-bottom: 3rem;
 }
 
 @media (max-width: 768px) {
@@ -272,4 +281,43 @@ header {
     padding: 1rem;
   }
 
+}
+
+.modal-dialog {
+  max-width: 90%;
+}
+
+.modal-dialog-slideout {
+  min-height: 100%;
+  margin    : 0 0 0 auto;
+  background: #fff;
+}
+
+.modal.fade .modal-dialog.modal-dialog-slideout {
+  -webkit-transform: translate(100%, 0)scale(1);
+  transform        : translate(100%, 0)scale(1);
+}
+
+.modal.fade.show .modal-dialog.modal-dialog-slideout {
+  -webkit-transform: translate(0, 0);
+  transform        : translate(0, 0);
+  display          : flex;
+  align-items      : stretch;
+  -webkit-box-align: stretch;
+  height           : 100%;
+}
+
+.modal.fade.show .modal-dialog.modal-dialog-slideout .modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modal-dialog-slideout .modal-content {
+  border: 0;
+}
+
+.modal-dialog-slideout .modal-header,
+.modal-dialog-slideout .modal-footer {
+  height : 4rem;
+  display: block;
 }
