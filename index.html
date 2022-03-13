@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="tienda online de articulos hechos al crochet para bebes y niños. Decoracion, juguetes y muñecos hechos artesanalmente con amor">
     <meta name="keywords" content="crochet, bebe, decoracion, muñeco, artesanal">
@@ -30,65 +30,102 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a id="logo" class="navbar-brand" href="./index.html" onclick="clickLogo()"><img src="./fotos/logo.png" alt=""></a>
+                    <a id="logo" class="navbar-brand" href="./index.html" onclick="clickLogo()"><img
+                            src="./fotos/logo.png" alt=""></a>
                 </div>
-                <form class="d-grid d-md-flex justify-content-md-end">
-                    <button class="btn btn-outline-secondary" type="submit">Carrito <svg
-                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                            class="bi bi-basket2-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z" />
-                        </svg></button>
-                </form>
+
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#ModalSlide"
+                    onclick="showBasket()"> CARRITO
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-basket2-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z" />
+                    </svg></button>
+                <div class="modal fade" id="ModalSlide" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-slideout" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title align-right" id="exampleModalLabel">Carrito de Compras</h5>
+                            </div>
+                            <div id="contenedor" class="modal-body">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
     <main class="main text-center">
 
-        <div id="contenedor"  class="alert alert-dark" role="alert">
-           <p> Tambien podes encargar piezas personalizadas <a href="https://api.whatsapp.com/send?phone=542494374429"
-                class="alert-link" target="blank">haciendo click aqui</a>. Escribinos y te pasamos un presupuesto a
-            medida
-        </div> </p>
+        <div class="alert alert-dark" role="alert">
+            <p> Tambien podes encargar piezas personalizadas <a href="https://api.whatsapp.com/send?phone=542494374429"
+                    class="alert-link" target="blank">haciendo click aqui</a>. Escribinos y te pasamos un presupuesto a
+                medida
+        </div>
+        </p>
 
         <div class="main__grid">
 
             <div class="main__grid--foto1">
                 <img class="main__img tienda img-thumbnail" src="./fotos/unicornio.png"
                     alt="tapete colgante celeste con un unicornio en el medio hecho al crochet" />
-                <label for="option1" onclick="clickEvent()"><a class="btn btn-secondary">Agregar al carrito</a></label>
+                <button id="unicornio" type="button" class="btn btn-secondary" onclick="onAddToBasket(this.id)">Agregar
+                    al carrito</button>
             </div>
             <div class="main__grid--foto2">
                 <img class="main__img img-thumbnail" src="./fotos/jirafa.png"
                     alt="tapete colgante cuadrado blanco con una jirafa comiendo flores en el medio hecho al crochet" />
-                <label for="option1" onclick="clickEvent()"><a class="btn btn-secondary">Agregar al carrito</a></label>
+                <button id="jirafa" type="button" class="btn btn-secondary" onclick="onAddToBasket(this.id)">Agregar al
+                    carrito</button>
             </div>
 
             <div class="main__grid--foto3">
                 <img class="main__img img-thumbnail" src="./fotos/arcoiris.png"
                     alt="tapete con forma de arcoiris de colores con una nube y un sol hecho al crochet" />
-                <label for="option1" onclick="clickEvent()"><a class="btn btn-secondary">Agregar al carrito</a></label>
+                <button id="arcoiris" type="button" class="btn btn-secondary" onclick="onAddToBasket(this.id)">Agregar
+                    al carrito</button>
             </div>
 
             <div class="main__grid--foto4">
                 <img class="main__img img-thumbnail" src="./fotos/osobostero.png"
                     alt="muñeco con forma de oso con camiseta de boca y una pelota en el pie hecho al crochet" />
-                <label for="option1" onclick="clickEvent()"><a class="btn btn-secondary">Agregar al carrito</a></label>
+                <button id="osito" type="button" class="btn btn-secondary" onclick="onAddToBasket(this.id)">Agregar
+                    al carrito</button>
             </div>
 
             <div class="main__grid--foto5">
                 <img class="main__img tienda img-thumbnail" src="./fotos/banquito.jpg"
                     alt="banco decorativo con forma de unicornio hecho al crochet" />
-                <label for="option1" onclick="clickEvent()"><a class="btn btn-secondary">Agregar al carrito</a></label>
+                <button id="banquito" type="button" class="btn btn-secondary" onclick="onAddToBasket(this.id)">Agregar
+                    al carrito</button>
             </div>
 
             <div class="main__grid--foto6">
                 <img class="main__img tienda img-thumbnail" src="./fotos/stitch.jpg"
                     alt="muñeco con forma de stitch hecho al crochet" />
-                <label for="option1" onclick="clickEvent()"><a class="btn btn-secondary">Agregar al carrito</a></label>
+                <button id="stitch" type="button" class="btn btn-secondary" onclick="onAddToBasket(this.id)">Agregar al
+                    carrito</button>
             </div>
 
+        </div>
+
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="./fotos/logo.png" class="rounded me-2" alt="...">
+                    <strong class="me-auto">Bebe a bordo</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div id="toastBody" class="toast-body">
+                    
+                </div>
+            </div>
         </div>
 
     </main>
@@ -120,6 +157,10 @@
 
     </footer>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./js-bt/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>
 

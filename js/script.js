@@ -1,7 +1,3 @@
-function clickEvent() {
-    let contenedor = document.getElementById('contenedor')
-    contenedor.innerHTML = '<h2>Producto añadido al carrito correctamente</h2> <p>tambien podes encargar piezas personalizadas, escribinos y te pasamos un presupuesto a medida</p>'
-}
 
 function clickLogo() {
     alert('esta funcion todavia no se puede realizar')
@@ -13,13 +9,6 @@ function calculateIVA(price, taxRate = 0.21) {
 }
 
 const calculateDiscount = price => price * 0.9
-
-function notifyShippingCosts(total) {
-    if (total >= 2000)
-        alert('Este carrito tiene envio gratis')
-    else
-        alert('Este carrito tiene un costo de envio sujeto a CorreoArgentino')
-}
 
 class Product {
     constructor(name, price, stock) {
@@ -41,57 +30,46 @@ catalogArray.push(new Product('osito', 1500, 4));
 catalogArray.push(new Product('banquito', 5000, 0));
 catalogArray.push(new Product('stitch', 1500, 2));
 
-
-const productArray = catalogArray.filter(
-    (e) => e.isInStock()
-)
-
-
-/* ARMO EL TEXTO QUE SE MUESTRA AL USUARIO EN BASE AL ARRAY DE OBJETOS */
-
-showProducts = 'Ingrese el nombre del articulo que queres comprar: \n'
-
-
-for (let i = 0; i < productArray.length; i++) {
-    let product = productArray[i]
-    showProducts += `\n${i + 1}. ${product.name}  -> \$${product.price}`
+function showToast(message) {
+    let liveToast = document.getElementById('liveToast')
+    let toast = new bootstrap.Toast(liveToast)
+    toast.show()
+    let toastBody = document.getElementById('toastBody')   
+    toastBody.innerHTML = message
 }
-showProducts += '\n \n Para finalizar la carga de productos presione ENTER '
-input = prompt(showProducts);
+basket = []
 
-total = 0
 
-let basket = []
-
-while (input != null && input != '') {
-
-    const products = productArray.find(
-        (element) => element.name === input.toLowerCase()
-    );
-
-    if (products == null)
-        alert('Ese articulo no es valido, por favor ingrese uno de la lista')
-    else {
-        var addToCart = basket.push(products.price);
-        var total = basket.reduce(function (a, b) {
-            return a + b;
-        });
+function onAddToBasket(idProducto) {
+    let producto = catalogArray.find(
+        (element) => element.name === idProducto
+    )
+    if (producto.isInStock()) {
+        showToast('Producto añadido al carrito')
+        basket.push(producto)
+    }else {
+        showToast('Este producto no se encuentra en stock')
     }
 
-    input = prompt(showProducts)
-
 }
 
-if (basket.length > 0) {
+function showBasket() {
+    let basketElement = document.getElementById('contenedor')
+    if (basket.length > 0) {
+        htmlBasket = '<h1>Detalle de compra:</h1>'
+        let total = 0
 
-    alert('El precio total de este carrito es de: ' + `${calculateIVA(total, 0.21)}`)
+        basket.forEach((item) => {
+            htmlBasket = htmlBasket + `<h2>Producto:</h2><h3> ---${item.name.toUpperCase()}--- </h3><h3>Precio : ${item.price}</h3>`
+            total = total + item.price
+        })
+        let totalWithIVA = calculateIVA(total)
+        let htmlTotal = `<br><h1>Total + IVA </h1><h2>${totalWithIVA}</h2><h3>Con el 10% de descuento pagando en efectivo el precio es de: ${calculateDiscount(totalWithIVA, 0.9)}</h3>`
 
-    alert('El total con 10% de descuento es: ' + `${calculateDiscount(total, 0.9)}`)
-
-    notifyShippingCosts(total)
-}
-
-
-let contenedor = document.querySelector("#contenedor"); {
-    contenedor.innerHTML = "<h2>GRACIAS POR VISITAR NUESTRA PAGINA WEB</h2>"
+        let htmlShipping = `<h3>Este carrito tiene un costo de envio sujeto a CorreoArgentino</h3>`
+        if (totalWithIVA >= 2000)
+            htmlShipping = `<h3>Este carrito tiene envio gratis</h3>`
+        basketElement.innerHTML = htmlBasket + htmlTotal + htmlShipping
+    } else
+        basketElement.innerHTML = `<h1>Aún no agregaste nada al carrito</h1>`
 }
