@@ -1,8 +1,4 @@
 
-function clickLogo() {
-    alert('esta funcion todavia no se puede realizar')
-}
-
 function calculateIVA(price, taxRate = 0.21) {
     let result = price * (1 + taxRate)
     return result
@@ -34,11 +30,11 @@ function showToast(message) {
     let liveToast = document.getElementById('liveToast')
     let toast = new bootstrap.Toast(liveToast)
     toast.show()
-    let toastBody = document.getElementById('toastBody')   
+    let toastBody = document.getElementById('toastBody')
     toastBody.innerHTML = message
 }
-basket = []
 
+basket = localStorage.getItem('previousBasket') == null ? [] : JSON.parse(localStorage.getItem('previousBasket'))
 
 function onAddToBasket(idProducto) {
     let producto = catalogArray.find(
@@ -47,10 +43,10 @@ function onAddToBasket(idProducto) {
     if (producto.isInStock()) {
         showToast('Producto añadido al carrito')
         basket.push(producto)
-    }else {
+    } else {
         showToast('Este producto no se encuentra en stock')
     }
-
+    localStorage.setItem('previousBasket', JSON.stringify(basket))
 }
 
 function showBasket() {
