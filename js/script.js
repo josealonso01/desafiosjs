@@ -56,11 +56,11 @@ function showBasket() {
         let total = 0
 
         basket.forEach((item) => {
-            htmlBasket = htmlBasket + `<h2>Producto:</h2><h3> ---${item.name.toUpperCase()}--- </h3><h3>Precio : ${item.price}</h3>`
+            htmlBasket = htmlBasket + `<h2>Producto:</h2><h3> ---${item.name.toUpperCase()}--- </h3><h3>Precio : $${item.price}</h3>`
             total = total + item.price
         })
         let totalWithIVA = calculateIVA(total)
-        let htmlTotal = `<br><h1>Total + IVA </h1><h2>${totalWithIVA}</h2><h3>Con el 10% de descuento pagando en efectivo el precio es de: ${calculateDiscount(totalWithIVA, 0.9)}</h3>`
+        let htmlTotal = `<br><h1>Total + IVA </h1><h2> $${totalWithIVA}</h2><h3>Con el 10% de descuento pagando en efectivo el precio es de: $${calculateDiscount(totalWithIVA, 0.9)}</h3>`
 
         let htmlShipping = `<h3>Este carrito tiene un costo de envio sujeto a CorreoArgentino</h3>`
         if (totalWithIVA >= 2000)
@@ -69,3 +69,13 @@ function showBasket() {
     } else
         basketElement.innerHTML = `<h1>Aún no agregaste nada al carrito</h1>`
 }
+
+const logo = document.getElementById('logo')
+logo.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Error!',
+        text: 'La pagina a la que intenta volver se encuentra en construccion',
+        icon: 'error',
+        confirmButtonText: ' Seguir comprando '
+    })
+})
