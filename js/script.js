@@ -1,4 +1,25 @@
 
+const URL = 'https://get.geojs.io/v1/ip/geo.json'
+fetch(URL)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        console.log(datos);
+        if (datos.country == "Argentina") {
+            Swal.fire({
+                title: 'En este momento no estamos haciendo envios a tu pais, apreta OK para continuar de todos modos',
+                width: 600,
+                padding: '3em',
+                color: '#716add',
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                  url("https://i.gifer.com/1pLr.gif")
+                  left top
+                  no-repeat
+                `
+            })
+        }
+    })
+
 function calculateIVA(price, taxRate = 0.21) {
     let result = price * (1 + taxRate)
     return result
@@ -79,3 +100,4 @@ logo.addEventListener('click', () => {
         confirmButtonText: ' Seguir comprando '
     })
 })
+
