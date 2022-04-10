@@ -3,7 +3,6 @@ const URL = 'https://get.geojs.io/v1/ip/geo.json'
 fetch(URL)
     .then(respuesta => respuesta.json())
     .then(datos => {
-        console.log(datos);
         if (datos.country != "Argentina") {
             Swal.fire({
                 title: 'En este momento no estamos haciendo envios a tu pais, apreta OK para continuar de todos modos',
